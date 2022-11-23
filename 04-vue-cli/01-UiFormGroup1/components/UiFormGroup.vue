@@ -1,15 +1,27 @@
 <template>
-  <div class="form-group">
-    <!-- form-group_inline -->
-    <label class="form-group__label">label text</label>
-    <!-- CONTENT -->
+  <div class="form-group" :class="{'form-group_inline': this.inline}">
+    <slot/>
+    <label class="form-group__label" v-if="this.label">{{ label }}</label>
+
   </div>
 </template>
 
 <script>
+import { computed } from '@vue/runtime-core';
 export default {
   name: 'UiFormGroup',
+
+  props: {
+    inline: {
+      type: Boolean,
+      default: false,
+    },
+    label: {
+      type: String,
+    },
+  },
 };
+
 </script>
 
 <style scoped>
