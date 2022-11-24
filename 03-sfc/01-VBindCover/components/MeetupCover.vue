@@ -12,9 +12,8 @@ export default {
 
   computed: {
     img () {
-      let gradient = 'linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),';
       if (this.image) {
-        return `${gradient} url('${this.image}')`
+        return `url('${this.image}')`
       }
     }
   },
@@ -27,7 +26,7 @@ export default {
 .meetup-cover {
   background-size: cover;
   background-position: center;
-  background-image: v-bind('null ?? img');
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), v-bind(img);
   display: flex;
   flex-direction: column;
   align-items: center;

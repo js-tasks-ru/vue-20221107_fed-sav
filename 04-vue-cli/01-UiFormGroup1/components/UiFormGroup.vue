@@ -1,13 +1,11 @@
 <template>
-  <div class="form-group" :class="{'form-group_inline': this.inline}">
-    <slot/>
-    <label class="form-group__label" v-if="this.label">{{ label }}</label>
-
+  <div class="form-group" :class="{'form-group_inline': inline}">
+    <label class="form-group__label" v-if="label">{{ label }}</label>
+    <slot />
   </div>
 </template>
 
 <script>
-import { computed } from '@vue/runtime-core';
 export default {
   name: 'UiFormGroup',
 
