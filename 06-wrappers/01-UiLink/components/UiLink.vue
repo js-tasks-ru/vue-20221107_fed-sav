@@ -1,10 +1,7 @@
 <template>
-  <a class="link" v-bind="$attrs" v-if="tag === 'a'">
+  <component v-bind="$attrs" :is="tag" class="link">
     <slot></slot>
-  </a>
-  <router-link class="link" v-bind="$attrs" v-else>
-    <slot></slot>
-  </router-link>
+  </component>
 </template>
 
 <script>
@@ -13,7 +10,7 @@ export default {
 
   props: {
     tag: {
-      type: String,
+      type: [Object, String, Function],
       default: 'RouterLink'
     },
   }
