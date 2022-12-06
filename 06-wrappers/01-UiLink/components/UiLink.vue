@@ -16,7 +16,6 @@ export default {
       type: String,
       default: 'RouterLink'
     },
-    
   }
 };
 </script>
